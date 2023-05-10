@@ -1,0 +1,73 @@
+<div class="contact_form">
+  <div class="formulario">
+    <h1>Añadir paciente</h1>
+    <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+      <p>
+        <label>DNI
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="text" required="obligatorio" formControlName="dni" placeholder="Escribe tu DNI"
+          class="form-control" maxlength="50">
+      </p>
+
+      <p>
+        <label>Nombre
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="text" class="form-control" formControlName="name" required="obligatorio"
+          placeholder="Escribe tu nombre" maxlength="100">
+      </p>
+
+      <p>
+        <label>Apellido
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="text" class="form-control" required="obligatorio" formControlName="surname"
+          placeholder="Escribe tu apellido" maxlength="100">
+      </p>
+
+      <p>
+        <label>Email
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="email" class="form-control" required="obligatorio" formControlName="email"
+          placeholder="Escribe tu Email" maxlength="100">
+      </p>
+
+      <p>
+        <label>Teléfono
+        </label>
+        <input type="tel" class="form-control" placeholder="Escribe tu teléfono" formControlName="phone" maxlength="50">
+      </p>
+
+      <p>
+        <label>Fecha de nacimiento
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="date" class="form-control" formControlName="birthdate" required="obligatorio">
+      </p>
+
+      <p>
+        <label>Dirección
+        </label>
+        <input type="text" class="form-control" formControlName="address" placeholder="Escribe tu dirección"
+          maxlength="40">
+      </p>
+
+      <p>
+        <label>Ciudad
+          <span class="obligatorio">*</span>
+        </label>
+        <select class="form-control" formControlName="city_id">
+          <option *ngFor="let city of cities" [value]="city.city_id">{{city.name}}</option>
+        </select>
+      </p>
+
+      <p>
+        <button type="submit">Guardar</button>
+      <p class="aviso">
+        <span class="obligatorio"> * </span>los campos son obligatorios.
+      </p>
+    </form>
+  </div>
+</div>

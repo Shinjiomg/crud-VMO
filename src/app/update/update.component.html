@@ -1,0 +1,75 @@
+<div class="contact_form">
+  <div class="formulario">
+    <h1>Actualizar paciente</h1>
+    <form (ngSubmit)="onSubmit()">
+      <p>
+        <label>DNI
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="text" name="dni" [(ngModel)]="patient.dni" required="obligatorio" placeholder="Escribe tu DNI"
+          class="form-control" maxlength="50">
+      </p>
+
+      <p>
+        <label>Nombre
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="text" name="name" [(ngModel)]="patient.first_name" class="form-control" required="obligatorio"
+          placeholder="Escribe tu nombre" maxlength="100">
+      </p>
+
+      <p>
+        <label>Apellido
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="text" name="surname" [(ngModel)]="patient.last_name" class="form-control" required="obligatorio"
+          placeholder="Escribe tu apellido" maxlength="100">
+      </p>
+
+      <p>
+        <label>Email
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="email" name="email" [(ngModel)]="patient.email" class="form-control" required="obligatorio"
+          placeholder="Escribe tu Email" maxlength="100">
+      </p>
+
+      <p>
+        <label>Teléfono
+        </label>
+        <input type="tel" name="phones" [(ngModel)]="patient.phones" class="form-control"
+          placeholder="Escribe tu teléfono" maxlength="50">
+      </p>
+
+      <p>
+        <label>Fecha de nacimiento
+          <span class="obligatorio">*</span>
+        </label>
+        <input type="date" name="birthdate" [(ngModel)]="patient.birthdate " class="form-control"
+          required="obligatorio">
+      </p>
+
+      <p>
+        <label>Dirección
+        </label>
+        <input type="text" name="address" [(ngModel)]="patient.address" class="form-control"
+          placeholder="Escribe tu dirección" maxlength="40">
+      </p>
+
+      <p>
+        <label>Ciudad
+          <span class="obligatorio">*</span>
+        </label>
+        <select class="form-control" [(ngModel)]="patient.city_id" name="city">
+          <option *ngFor="let city of cities" [value]="city.city_id">{{city.name}}</option>
+        </select>
+      </p>
+
+      <p>
+        <button type="submit">Guardar cambios</button>
+      <p class="aviso">
+        <span class="obligatorio"> * </span>los campos son obligatorios.
+      </p>
+    </form>
+  </div>
+</div>
